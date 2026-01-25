@@ -1,0 +1,15 @@
+.minha-classe {
+  background: lightgray;
+}
+
+export class AppComponent {
+  // se for nome de classe:
+  sidebarClass: string = 'minha-classe';
+
+  // ou para usar [ngClass] com objeto:
+  // sidebarClass = { aberto: true, fechado: false };
+
+  // ...existing code...
+}
+
+<div [ngClass]="sidebarClass"> ola </div>
