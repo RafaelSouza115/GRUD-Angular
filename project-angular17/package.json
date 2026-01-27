@@ -2,10 +2,10 @@
   "name": "project-angular17",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
+    "ng": "ng", 
+    "start": "ng serve", 
+    "build": "ng build", 
+    "watch": "ng build --watch --configuration development", 
     "test": "ng test",
     "serve:ssr:project-angular17": "node dist/project-angular17/server/server.mjs"
   },

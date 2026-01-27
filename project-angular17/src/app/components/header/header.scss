@@ -1,0 +1,27 @@
+@use '../../variables.scss' as vars;
+
+.sidebar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 20px;
+    gap: 200px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 15px;
+}
+
+.bt{
+    height: 40px;
+    width: auto;
+    background-color: vars.$btHome;
+    border-radius: 15px;
+    color: white;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;    
+}
