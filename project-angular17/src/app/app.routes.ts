@@ -1,14 +1,20 @@
-import { Header } from './components/header/header';
-import { Home } from './components/home/home';
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-  {
-    path: '/', //isso que aparece na barra de endereços
-    component: Home, //componente que será renderizado
-  },
-  {
-    path: 'header', //isso que aparece na barra de endereços
-    component: Header, //componente que será renderizado
-  },
+    {
+        path: 'home',
+        loadComponent: () => import('./components/home/home.component').then(m => m.HomeComponent),
+    },
+    {
+        path: 'sobre',
+        loadComponent: () => import('./components/sobre/sobre.component').then(m => m.SobreComponent),
+    },
+    {
+        path: 'calculadora',
+        loadComponent: () => import('./components/calculadora/calculadora.component').then(m => m.CalculadoraComponent),
+    },
+    {
+        path: 'listprodutos',
+        loadComponent: () => import('./components/list-product/list-product.component').then(m => m.ListprodutosComponent),
+    }
 ];
