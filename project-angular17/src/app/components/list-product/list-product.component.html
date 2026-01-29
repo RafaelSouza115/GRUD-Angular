@@ -1,1 +1,28 @@
-<p>list-product works!</p>
+<div class="flex gap-2 items-center p-4 bg-gray-100 font-sans">
+    <p class="flex align-center ml-6 text-gray-800">procurar produto: </p>
+    <input type="text" class="border ml-2">
+</div>
+
+<table class="min-w-full bg-white">
+    <thead>
+        <tr>
+            <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-700">ID</th>
+            <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-700">Nome</th>
+            <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-700">Preço</th>
+            <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-700">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td class="py-2 px-4 border-b border-gray-200">{{ product.id }}</td>
+            <td class="py-2 px-4 border-b border-gray-200">{{ product.name }}</td>
+            <td class="py-2 px-4 border-b border-gray-200">R{{ product.price | currency }}</td>
+            <td class="py-2 px-4 border-b border-gray-200">
+                <div class="flex ">
+                    <button (click)="editProduct(product.id)" class="bg-blue-500 text-white px-3 py-1 rounded mr-2">Edit</button>
+                    <button (click)="removeProduct(product.id)" class="bg-red-500 text-white px-3 py-1 rounded">Delete</button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
