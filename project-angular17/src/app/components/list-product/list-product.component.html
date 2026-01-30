@@ -1,6 +1,8 @@
 <div class="flex gap-2 items-center p-4 bg-gray-100 font-sans">
     <p class="flex align-center ml-6 text-gray-800">procurar produto: </p>
     <input type="text" class="border ml-2">
+    <!-- //aonde o modal vai ser aberto -->
+    <button (click)="addProduct()" class="bg-green-500 text-white px-3 py-1 rounded ml-6">+</button>
 </div>
 
 <table class="min-w-full bg-white">
@@ -26,3 +28,23 @@
         </tr>
     </tbody>
 </table>
+
+<dialog #productModal>
+    <form method="dialog" class="p-4">
+        <h2 class="text-lg font-semibold mb-4">Adicionar Novo Produto</h2>
+        <div class="mb-4">
+            <label for="productName" class="block text-sm font-medium text-gray-700">Nome do Produto</label>
+            <input type="text" id="productName" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+        </div>
+        <div class="mb-4">
+            <label for="productPrice" class="block text-sm font-medium text-gray-700">Preço do Produto</label>
+            <input type="number" id="productPrice" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+        </div>
+        <div class="flex justify-end">
+            <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded" (click)="saveProduct()">Salvar</button>
+            <button type="button" class="ml-2 bg-gray-500 text-white px-4 py-2 rounded" (click)="productModal.close()">Cancelar</button>    
+        </div>
+    </form>
+</dialog>
+
+
